@@ -16,6 +16,7 @@
     "axios": "^1.9.0",
     "bootstrap-icons": "^1.13.1",
     "daisyui": "^5.0.50",
+    "formik": "^2.4.6",
     "heroicons": "^2.2.0",
     "lucide-react": "^0.511.0",
     "react": "^19.1.0",

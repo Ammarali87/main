@@ -23,7 +23,8 @@ export const signup = catchAsync(async (req, res, next) => {
    // check if email exists optional   
    const existingUser = await User.findOne({ email });
   if (existingUser) {
-    return next(new ApiError('Email already registered.', 400));
+    return res.status(400).json({ message: "Email already exists" });
+    // return next(new ApiError('Email already registered.', 400));
   }
 
   // Allow admin creation ONLY if no admins exist
