@@ -24,7 +24,7 @@ import React, { createContext, useState, useEffect } from "react";
 export const AuthContext = createContext();
 
   //  rember useEffect to handel dynamic changes 
-export default function AuthProvider({ children }) {
+export  function AuthProvider({ children }) {
 
   const [token, setToken] = useState(() => localStorage.getItem("token") || null);
   const [loading, setLoading] = useState(false);

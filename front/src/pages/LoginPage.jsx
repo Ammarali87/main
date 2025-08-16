@@ -1,13 +1,14 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 export default function LoginPage() {
-    // rember to add useNavigete 
   const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
 
-    return (
+  return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
@@ -21,9 +22,15 @@ export default function LoginPage() {
           }}
           onSubmit={async (values, { setSubmitting, setStatus }) => {
             try {
-              await axios.post("http://localhost:3000/api/v1/auth/login", values, { withCredentials: true });
+              const res = await axios.post(
+                "http://localhost:3000/api/v1/auth/login",
+                values,
+                { withCredentials: true }
+              );
+              // If login is successful, save token and user
+              login(res.data.user, res.data.token); // adjust if your backend returns user/token differently
               setStatus({ success: "Login successful!" });
-              navigte("/")
+              navigate("/");
             } catch (err) {
               setStatus({ error: err.response?.data?.message || "Login failed" });
             }

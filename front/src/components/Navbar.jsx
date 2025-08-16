@@ -1,13 +1,13 @@
 import { useState, useRef, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-// import { AuthContext } from "../context/AuthContext";
+import { AuthContext } from "../context/AuthContext";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
 
-  // const { authUser, logout } = useContext(AuthContext);
+  const { authUser, logout } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -40,10 +40,8 @@ export default function Navbar() {
         <h1 className="text-xl text-violet-900/66">Navbar</h1>
 
         <ul className="hidden sm:flex gap-6 text-sm font-semibold text-violet-900/66">
-          <li className="hover:underline cursor-pointer">Home</li>
-          <li className="hover:underline cursor-pointer">About</li>
-          <li className="hover:underline cursor-pointer">Contact</li>
-          {/* {authUser ? (
+         
+          {authUser ? (
             <>
               <li
                 className="hover:underline cursor-pointer"
@@ -51,6 +49,9 @@ export default function Navbar() {
               >
                 Profile
               </li>
+               <li className="hover:underline cursor-pointer">Home</li>
+              <li className="hover:underline cursor-pointer">About</li>
+              <li className="hover:underline cursor-pointer">Contact</li>
               <li
                 className="hover:underline cursor-pointer"
                 onClick={handleLogout}
@@ -59,13 +60,12 @@ export default function Navbar() {
               </li>
             </>
           ) : (
-            <li
-              className="hover:underline cursor-pointer"
-              onClick={() => navigate("/login")}
-            >
-              Login
+            <li>
+              <span className="hover:underline font-bold cursor-pointer"
+                onClick={() => navigate("/login")} >
+                Login</span> to see more 
             </li>
-          )} */}
+          )}
         </ul>
 
         <button
