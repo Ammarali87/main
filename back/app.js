@@ -20,7 +20,6 @@ import commentRoute from './routes/commentRoute.js';
 
  
 
-// http://localhost:3000/api/v1/csrf-token
 
 dotenv.config();
  

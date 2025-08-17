@@ -1,26 +1,7 @@
 import catchAsync from 'express-async-handler';
 import ApiError from '../utils/ApiError.js';
 import ApiFeatures from '../utils/ApiFeatures.js';
-import cloudinary from '../config/cloudinaryConfig.js';
  
-// Function to handle image uploads
-const uploadImage = async (file, folder) => {
-  return new Promise((resolve, reject) => {
-    const stream = cloudinary.uploader.upload_stream(
-      { folder },
-      (error, result) => {
-        if (error) reject(new ApiError(500, 'Error uploading image'));
-        else resolve(result.secure_url);
-      }   
-    );
-    stream.end(file.buffer);   // close the upload like close the fire 
-  });
-};
-  
-// const uploadImage = async (filePath, folder) => {
-//   const result = await cloudinary.uploader.upload(filePath, { folder });
-//   return result.secure_url;
-// };
 
 
 
