@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import RightTable from "./RightTable";
 import IconTable from './IconTable';
 import CommentSection from './CommentSection';
+import Carousel from "./Carosal";
 
 export default function MainLayout() {
   return (
@@ -21,18 +22,22 @@ export default function MainLayout() {
             <source src="/vid.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
+        
           <div className="w-full mx-auto max-w-md mt-4">
+            <IconTable />
             <IconTable />
           </div>
         </div>
+        
         <div className="w-full  md:w-[30vw] max-w-md">
           <RightTable />
         </div>
       </main>
+     
+      <Carousel />
       <CommentSection />
-      <div className="fixed bottom-3 right-6 z-50 bg-sky-400 rounded-full p-1">
-        {/* Gear SVG here */}
-      </div>
+     
+
       <Footer />
     </div>
   );
