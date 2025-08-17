@@ -1,13 +1,13 @@
 import { Router } from 'express';
 import { protect, allowedTo } from '../controller/authController.js';
-import { createReviewValidator } from '../utils/validator/reviewValidator.js';
+import { createCommentValidator } from '../utils/validator/CommentValidator.js';
 import {
-  createReview,
-  getProductReviews,
-  updateReview,
-  deleteReview,
+  createComment,
+  getProductComments,
+  updateComment,
+  deleteComment,
   setProductIdAndUserIdToBody
-} from '../controller/reviewController.js';
+} from '../controller/commentController.js';
 
 // ✅ لازم يكون قبل استخدام router
 const router = Router({ mergeParams: true }); 
@@ -15,13 +15,13 @@ const router = Router({ mergeParams: true });
 
 
 router.route('/')   //make one route to hold all stuff 
-  .get(getProductReviews)
+  .get(getProductComments)
   .post(
     protect,
     allowedTo('user'),
     setProductIdAndUserIdToBody,
-    createReviewValidator,
-    createReview,
+    createCommentValidator,
+    createComment,
   );
 
 
@@ -29,7 +29,7 @@ router.route('/')   //make one route to hold all stuff
   
 router
 .route('/:id')
-.patch(protect, allowedTo('user', 'admin'), updateReview)
-.delete(protect, allowedTo('user', 'admin'), deleteReview);
+.patch(protect, allowedTo('user', 'admin'), updateComment)
+.delete(protect, allowedTo('user', 'admin'), deleteComment);
 
 export default router;
