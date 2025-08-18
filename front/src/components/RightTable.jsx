@@ -1,31 +1,30 @@
 import { useState } from 'react';
-
 const weekData = [
   {
     title: 'Week 1–3',
     sections: [
       {
-        title: 'Section 1: Fundamentals',
+        title: 'Section 1: SpaceX Story',
         items: [
-          'Digital Marketing Strategies',
-          'Introduction to SEO',
-          'Marketing Funnels Explained',
+          'History of SpaceX',
+          'Elon Musk’s Vision for Space Travel',
+          'Major Milestones and Achievements',
         ],
       },
       {
-        title: 'Section 2: SEO Basics',
+        title: 'Section 2: Rockets & Technology',
         items: [
-          'Understanding Search Engines',
-          'Keyword Research Techniques',
-          'On-Page vs Off-Page SEO',
+          'Falcon 9 vs Falcon Heavy',
+          'Starship: Design and Goals',
+          'Reusable Rocket Technology',
         ],
       },
       {
-        title: 'Section 3: Content Strategy',
+        title: 'Section 3: Missions & Impact',
         items: [
-          'Content Planning',
-          'Blog Writing Best Practices',
-          'Using AI in Content Creation',
+          'Crewed Missions (e.g., Crew Dragon)',
+          'Commercial Satellite Launches',
+          'Impact on Global Space Industry',
         ],
       },
       {
@@ -42,27 +41,27 @@ const weekData = [
     title: 'Week 4–6',
     sections: [
       {
-        title: 'Section 6: Social Media Marketing',
+        title: 'Section 6: AI ChatGpt',
         items: [
-          'Facebook and Instagram Ads',
-          'Social Media Algorithms',
-          'Engagement Strategies',
+          'What is Artificial Intelligence?',
+          'History & Evolution of AI',
+          'Types of AI (Narrow vs General)',
         ],
       },
       {
-        title: 'Section 7: Email Marketing',
+        title: 'Section 7: AI Tools & Techniques',
         items: [
-          'Email List Building',
-          'Crafting High-Open Emails',
-          'Automation Tools',
+          'Machine Learning Basics',
+          'Neural Networks Explained',
+          'Natural Language Processing',
         ],
       },
       {
-        title: 'Section 8: Analytics & Tracking',
+        title: 'Section 8: AI in Real Life',
         items: [
-          'Google Analytics Overview',
-          'Using UTM Parameters',
-          'KPIs & Reporting',
+          'AI in Healthcare, Finance, and Transportation',
+          'Ethics of AI and Bias',
+          'The Future of AI & Human Collaboration',
         ],
       },
     ],

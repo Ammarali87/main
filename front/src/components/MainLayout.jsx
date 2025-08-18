@@ -7,19 +7,18 @@ import Carousel from "./Carosal";
 
 export default function MainLayout() {
   return (
-    <div className="min-h-screen flex flex-col bg-sky-200">
+    <div className="min-h-screen flex flex-col ">
       <Navbar />
-      <main className="flex-1 flex flex-row max-md:flex-col bg-red-200 m-2 p-2 gap-4">
+      <main className="flex-1 flex flex-row max-md:flex-col bg-indigo-400 rounded-xl m-2 p-4 px-5 gap-4">
         <div className="w-full md:w-[70vw] max-w-[1200px]">
-          <h1 className="text-xl font-bold mb-4">Starting SEO as your Home</h1>
+          <h1 className="text-2xl font-bold ms-1 mb-4">Starting SEO as your Home</h1>
           <video
             controls
             autoPlay
-            muted
             loop
             className="w-full h-auto rounded"
           >
-            <source src="/vid.mp4" type="video/mp4" />
+            <source src="/vid1.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         
